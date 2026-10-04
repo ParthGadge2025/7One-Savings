@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0d1726">
+<title>7one Saving — by Parth Gadge</title>
+<meta name="description" content="7one Saving is a practical personal money manager by Parth Gadge.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar" id="sidebar">
+  <div class="brand"><div class="brand-mark">7</div><div><strong>7one</strong><span>Saving</span></div></div>
+  <div class="side-label">MONEY</div>
+  <nav>
+    <button class="nav active" data-page="dashboard">⌂ <span>Dashboard</span></button>
+    <button class="nav" data-page="expenses">₹ <span>Expenses</span></button>
+    <button class="nav" data-page="payments">↻ <span>Payments</span></button>
+    <button class="nav" data-page="calendar">▦ <span>Calendar</span></button>
+    <button class="nav" data-page="competition">⚔ <span>Competition</span></button>
+    <button class="nav" data-page="goals">◎ <span>Saving Goals</span></button>
+    <button class="nav" data-page="subscriptions">◈ <span>Subscriptions</span></button>
+    <button class="nav" data-page="reports">▤ <span>Reports & PDF</span></button>
+  </nav>
+  <div class="side-label">TOOLS</div>
+  <nav>
+    <button class="nav" data-page="insights">✦ <span>Insights</span></button>
+    <button class="nav" data-page="settings">⚙ <span>Settings</span></button>
+  </nav>
+  <div class="creator">Built by <b>Parth Gadge</b><small>Your money. Your rules.</small></div>
+</aside>
+
+<main class="main">
+<header class="topbar">
+  <button class="hamburger" id="hamburger">☰</button>
+  <div><div class="date-line" id="today"></div><h1 id="page-title">Dashboard</h1></div>
+  <div class="top-right"><button class="round" id="theme">☾</button><div class="avatar">PG</div></div>
+</header>
+
+<section class="page active" id="dashboard">
+  <div class="hero">
+    <div><p class="eyebrow">7ONE SAVING</p><h2>Make every rupee count.</h2><p>Track your spending, protect your payment dates and turn saving into a game.</p></div>
+    <button class="primary" data-modal="expenseModal">+ Add Expense</button>
+  </div>
+  <div class="stats">
+    <article class="stat"><span>Spent this month</span><strong id="d-spent">₹0</strong><small id="d-spent-sub">No expenses yet</small></article>
+    <article class="stat"><span>Budget left</span><strong id="d-left">₹0</strong><small id="d-budget-sub">Set a monthly budget</small></article>
+    <article class="stat"><span>Next payment</span><strong id="d-next">—</strong><small id="d-next-name">No payment added</small></article>
+    <article class="stat"><span>Saving rate</span><strong id="d-rate">0%</strong><small>Budget-based estimate</small></article>
+  </div>
+  <div class="grid-2">
+    <div class="panel"><div class="panel-head"><div><p class="eyebrow">RECENT</p><h3>Latest expenses</h3></div><button class="link" data-page="expenses">View all →</button></div><div id="recent"></div></div>
+    <div class="panel"><div class="panel-head"><div><p class="eyebrow">UP NEXT</p><h3>Payment reminders</h3></div><button class="link" data-page="calendar">Calendar →</button></div><div id="upcoming"></div></div>
+  </div>
+  <div class="grid-3">
+    <div class="mini-panel"><span class="mini-icon">🎯</span><div><b>Goal progress</b><strong id="goal-progress">0%</strong><small id="goal-name">No active goal</small></div></div>
+    <div class="mini-panel"><span class="mini-icon">🏆</span><div><b>Competition</b><strong id="comp-status">None</strong><small>Spend less to win</small></div></div>
+    <div class="mini-panel"><span class="mini-icon">💡</span><div><b>Saving tip</b><strong id="tip-title">Track first</strong><small id="tip-text">Small amounts add up.</small></div></div>
+  </div>
+</section>
+
+<section class="page" id="expenses">
+  <div class="page-head"><div><p class="eyebrow">MONEY IN MOTION</p><h2>Expenses</h2><p>Record, search, filter and analyse every payment you make.</p></div><button class="primary" data-modal="expenseModal">+ Add Expense</button></div>
+  <div class="toolbar"><input id="expenseSearch" class="search" placeholder="Search description or category..."><select id="expenseFilter"><option value="all">All categories</option><option>Food</option><option>Travel</option><option>Shopping</option><option>Education</option><option>Bills</option><option>Health</option><option>Entertainment</option><option>Recharge</option><option>Mess</option><option>Other</option></select><input type="month" id="expenseMonth"><button class="secondary" id="csvBtn">Export CSV</button></div>
+  <div class="panel table-panel"><div class="table-wrap"><table><thead><tr><th>Date</th><th>Description</th><th>Category</th><th>Paid by</th><th>Amount</th><th>Action</th></tr></thead><tbody id="expenseTable"></tbody></table></div></div>
+</section>
+
+<section class="page" id="payments">
+  <div class="page-head"><div><p class="eyebrow">NEVER MISS A DUE DATE</p><h2>Recurring payments</h2><p>Daily, weekly, monthly, yearly or custom reminders.</p></div><button class="primary" data-modal="paymentModal">+ Add Payment</button></div>
+  <div class="info-strip"><div><b>Actual date</b><span>Original scheduled date.</span></div><div><b>Adjusted date</b><span>Moved forward after holidays/off-days.</span></div><div><b>Exceeded</b><span>Shown when an unpaid due date has passed.</span></div></div>
+  <div id="paymentCards" class="cards"></div>
+</section>
+
+<section class="page" id="calendar">
+  <div class="page-head"><div><p class="eyebrow">YOUR MONEY CALENDAR</p><h2>Payment Calendar</h2><p>Expenses, recurring payments, adjusted dates and overdue items in one view.</p></div><div class="cal-nav"><button class="secondary" id="prevMonth">←</button><b id="calTitle"></b><button class="secondary" id="nextMonth">→</button></div></div>
+  <div class="legend"><span><i class="dot payment"></i>Payment</span><span><i class="dot expense"></i>Expense</span><span><i class="dot adjusted"></i>Adjusted</span><span><i class="dot overdue"></i>Exceeded</span></div>
+  <div class="calendar" id="calendarGrid"></div>
+  <div class="panel note"><b>Actual vs adjusted date</b><p>For a payment with holidays/off-days, the original date stays visible as the <strong>actual date</strong>. The app calculates the next usable date and marks it as <strong>adjusted</strong>. This is especially useful for mess fees, hostel payments, subscriptions and planned recharges.</p></div>
+</section>
+
+<section class="page" id="competition">
+  <div class="page-head"><div><p class="eyebrow">SAVE TOGETHER</p><h2>Saving Competition</h2><p>Compete with a friend or family member. The person with the higher final balance wins.</p></div><button class="primary" data-modal="competitionModal">+ New Competition</button></div>
+  <div class="competition-rule"><div><b>1. Same starting amount</b><span>Enter the total amount before the competition starts.</span></div><div><b>2. Same duration</b><span>Choose days, weeks or months.</span></div><div><b>3. Record spending</b><span>Add each person's spending during the period.</span></div><div><b>4. Final balance decides</b><span>Starting amount − total spending = final amount. Higher wins.</span></div></div>
+  <div id="competitions"></div>
+</section>
+
+<section class="page" id="goals">
+  <div class="page-head"><div><p class="eyebrow">BUILD SOMETHING</p><h2>Saving Goals</h2><p>Set a target for a phone, trip, emergency fund, course or anything else.</p></div><button class="primary" data-modal="goalModal">+ Add Goal</button></div>
+  <div id="goalsGrid" class="cards"></div>
+</section>
+
+<section class="page" id="subscriptions">
+  <div class="page-head"><div><p class="eyebrow">RECURRING COSTS</p><h2>Subscriptions</h2><p>See how much recurring services cost you over a month and a year.</p></div><button class="primary" data-modal="subscriptionModal">+ Add Subscription</button></div>
+  <div class="stats"><article class="stat"><span>Monthly</span><strong id="sub-monthly">₹0</strong><small>Estimated recurring cost</small></article><article class="stat"><span>Yearly</span><strong id="sub-yearly">₹0</strong><small>12-month projection</small></article><article class="stat"><span>Active</span><strong id="sub-count">0</strong><small>Subscriptions</small></article></div>
+  <div id="subscriptionsGrid" class="cards"></div>
+</section>
+
+<section class="page" id="reports">
+  <div class="page-head"><div><p class="eyebrow">SHARE YOUR HISTORY</p><h2>Reports & PDF</h2><p>Choose any date range, preview the expenses and create a shareable PDF.</p></div></div>
+  <div class="panel report-box"><div class="form-row"><label>From<input type="date" id="reportFrom"></label><label>To<input type="date" id="reportTo"></label><label>Report title<input id="reportTitle" placeholder="Family expense report"></label></div><div class="button-row"><button class="primary" id="pdfBtn">Generate PDF</button><button class="secondary" id="shareBtn">Share summary</button><button class="secondary" id="printBtn">Print / Save as PDF</button></div></div>
+  <div class="panel" id="reportPreview"><div class="empty">Select dates and generate a report preview.</div></div>
+  <div class="share-note"><b>Share with family or friends</b><span>The PDF contains the selected date range, total spending, category totals and a detailed expense list.</span></div>
+</section>
+
+<section class="page" id="insights">
+  <div class="page-head"><div><p class="eyebrow">UNDERSTAND YOUR HABITS</p><h2>Insights</h2><p>Simple calculations that help you identify where your money goes.</p></div></div>
+  <div class="grid-2"><div class="panel"><h3>Category breakdown</h3><div id="categoryBars"></div></div><div class="panel"><h3>Money health</h3><div id="health"></div></div></div>
+  <div class="panel"><h3>Smart observations</h3><div id="observations" class="observation-list"></div></div>
+</section>
+
+<section class="page" id="settings">
+  <div class="page-head"><div><p class="eyebrow">PERSONALIZE</p><h2>Settings</h2><p>Change your profile, budget, theme and data controls.</p></div></div>
+  <div class="settings-grid">
+    <div class="panel"><h3>Profile & budget</h3><label>Your name<input id="setName" placeholder="Parth Gadge"></label><label>Monthly budget (₹)<input type="number" id="setBudget" min="0"></label><label>Currency<select id="setCurrency"><option>₹ INR</option><option>$ USD</option><option>€ EUR</option><option>£ GBP</option></select></label><button class="primary" id="saveSettings">Save settings</button></div>
+    <div class="panel"><h3>Data & privacy</h3><p class="muted">7one Saving stores this demo's data in your browser using localStorage. No server account is required.</p><button class="secondary" id="backupBtn">Download backup JSON</button><button class="secondary" id="importBtn">Import backup JSON</button><input type="file" id="importFile" accept=".json" hidden><button class="danger" id="clearBtn">Clear all data</button></div>
+  </div>
+</section>
+</main></div>
+
+<!-- Modals -->
+<div class="modal" id="expenseModal"><div class="modal-box"><button class="close" data-close>×</button><p class="eyebrow">NEW EXPENSE</p><h2>Add expense</h2><form id="expenseForm"><label>Date<input name="date" type="date" required></label><label>Description<input name="description" placeholder="Lunch, petrol, recharge..." required></label><label>Category<select name="category"><option>Food</option><option>Travel</option><option>Shopping</option><option>Education</option><option>Bills</option><option>Health</option><option>Entertainment</option><option>Recharge</option><option>Mess</option><option>Other</option></select></label><label>Paid by<input name="paidBy" placeholder="Me"></label><label>Amount (₹)<input name="amount" type="number" min="0" step=".01" required></label><label>Note<textarea name="note" placeholder="Optional note"></textarea></label><button class="primary" type="submit">Save expense</button></form></div></div>
+
+<div class="modal" id="paymentModal"><div class="modal-box wide"><button class="close" data-close>×</button><p class="eyebrow">PAYMENT REMINDER</p><h2>Add recurring payment</h2><form id="paymentForm" class="form-grid"><label>Payment name<input name="name" placeholder="Mess payment / recharge / rent" required></label><label>Amount (₹)<input name="amount" type="number" min="0" required></label><label>Actual due date<input name="date" type="date" required></label><label>Repeat<select name="repeat"><option value="daily">Daily</option><option value="weekly">Weekly</option><option value="monthly" selected>Monthly</option><option value="yearly">Yearly</option></select></label><label>Reminder<select name="reminder"><option value="0">On due date</option><option value="1">1 day before</option><option value="3">3 days before</option><option value="7" selected>7 days before</option><option value="14">14 days before</option></select></label><label>Type<select name="type"><option>Regular</option><option>Recharge</option><option>Mess</option><option>Rent</option><option>Subscription</option><option>Insurance</option><option>Other</option></select></label><label class="full">Allow off-days / holidays? <select name="adjust"><option value="yes">Yes — move payment forward</option><option value="no">No — keep actual date</option></select></label><label class="full">Off-days / holidays (comma separated dates)<input name="offs" placeholder="2026-10-02, 2026-10-03"></label><button class="primary full" type="submit">Add payment reminder</button></form></div></div>
+
+<div class="modal" id="competitionModal"><div class="modal-box"><button class="close" data-close>×</button><p class="eyebrow">SAVING COMPETITION</p><h2>Create a challenge</h2><form id="competitionForm"><label>Competition name<input name="name" placeholder="Me vs Rahul" required></label><label>Player 1<input name="p1" placeholder="Parth" required></label><label>Player 2<input name="p2" placeholder="Friend / Family" required></label><label>Starting amount (₹)<input name="start" type="number" min="0" required></label><div class="form-grid"><label>Duration<input name="duration" type="number" min="1" required></label><label>Unit<select name="unit"><option value="days">Days</option><option value="weeks">Weeks</option><option value="months">Months</option></select></label></div><label>Start date<input name="date" type="date" required></label><button class="primary" type="submit">Start competition</button></form></div></div>
+
+<div class="modal" id="competitionSpendModal"><div class="modal-box"><button class="close" data-close>×</button><p class="eyebrow">RECORD COMPETITION SPENDING</p><h2>Add spending</h2><form id="competitionSpendForm"><input type="hidden" name="id"><label>Player<select name="player" id="spendPlayer"></select></label><label>Amount (₹)<input name="amount" type="number" min="0" required></label><label>Date<input name="date" type="date" required></label><label>Description<input name="description" placeholder="Food / shopping..." required></label><button class="primary" type="submit">Record spending</button></form></div></div>
+
+<div class="modal" id="goalModal"><div class="modal-box"><button class="close" data-close>×</button><p class="eyebrow">SAVING GOAL</p><h2>Create a goal</h2><form id="goalForm"><label>Goal name<input name="name" placeholder="New phone" required></label><label>Target amount (₹)<input name="target" type="number" min="1" required></label><label>Already saved (₹)<input name="saved" type="number" min="0" value="0"></label><label>Target date<input name="date" type="date"></label><button class="primary" type="submit">Create goal</button></form></div></div>
+
+<div class="modal" id="subscriptionModal"><div class="modal-box"><button class="close" data-close>×</button><p class="eyebrow">SUBSCRIPTION</p><h2>Add subscription</h2><form id="subscriptionForm"><label>Name<input name="name" placeholder="Netflix / Gym / Cloud..." required></label><label>Amount (₹)<input name="amount" type="number" min="0" required></label><label>Billing cycle<select name="cycle"><option value="monthly">Monthly</option><option value="yearly">Yearly</option><option value="weekly">Weekly</option></select></label><label>Next billing date<input name="date" type="date" required></label><button class="primary" type="submit">Add subscription</button></form></div></div>
+
+<div id="toast"></div>
+<script src="assets/js/app.js"></script>
+</body></html>

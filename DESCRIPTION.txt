@@ -1,0 +1,1 @@
+7One Savings — a simple, interactive personal finance web app to track expenses, recurring payments, saving goals, subscriptions, reports, and saving competitions.
