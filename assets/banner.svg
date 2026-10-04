@@ -1,0 +1,85 @@
+<svg width="1600" height="520" viewBox="0 0 1600 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="520" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#07111F"/>
+    <stop offset="0.55" stop-color="#0D1B2E"/>
+    <stop offset="1" stop-color="#101827"/>
+  </linearGradient>
+  <linearGradient id="accent" x1="190" y1="150" x2="1420" y2="410" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#61E6A8"/>
+    <stop offset="1" stop-color="#43B7FF"/>
+  </linearGradient>
+  <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+    <stop stop-color="#FFE48A"/>
+    <stop offset="1" stop-color="#F4B942"/>
+  </linearGradient>
+  <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+    <feDropShadow dx="0" dy="18" stdDeviation="20" flood-opacity=".28"/>
+  </filter>
+  <filter id="glow">
+    <feGaussianBlur stdDeviation="9" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse">
+    <path d="M42 0H0V42" stroke="#FFFFFF" stroke-opacity=".035"/>
+  </pattern>
+</defs>
+
+<rect width="1600" height="520" rx="34" fill="url(#bg)"/>
+<rect width="1600" height="520" rx="34" fill="url(#grid)"/>
+
+<circle cx="1350" cy="100" r="130" fill="#43B7FF" fill-opacity=".08" filter="url(#glow)">
+  <animate attributeName="r" values="120;155;120" dur="5s" repeatCount="indefinite"/>
+</circle>
+<circle cx="150" cy="450" r="110" fill="#61E6A8" fill-opacity=".07">
+  <animate attributeName="cy" values="450;425;450" dur="4s" repeatCount="indefinite"/>
+</circle>
+
+<g opacity=".75">
+  <circle cx="1220" cy="70" r="4" fill="#61E6A8"><animate attributeName="cy" values="70;105;70" dur="3s" repeatCount="indefinite"/></circle>
+  <circle cx="1280" cy="145" r="5" fill="#43B7FF"><animate attributeName="cy" values="145;115;145" dur="3.8s" repeatCount="indefinite"/></circle>
+  <circle cx="1440" cy="210" r="4" fill="#FFE48A"><animate attributeName="cy" values="210;180;210" dur="4.2s" repeatCount="indefinite"/></circle>
+</g>
+
+<text x="105" y="118" fill="#61E6A8" font-family="Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="4">PERSONAL FINANCE</text>
+<text x="100" y="205" fill="white" font-family="Arial, sans-serif" font-size="76" font-weight="800">7One Savings</text>
+<text x="105" y="255" fill="#B8C7D9" font-family="Arial, sans-serif" font-size="25">Track. Save. Understand your money.</text>
+
+<g filter="url(#shadow)">
+  <rect x="105" y="310" width="410" height="105" rx="22" fill="#101D30" stroke="#FFFFFF" stroke-opacity=".08"/>
+  <circle cx="160" cy="362" r="28" fill="url(#gold)"/>
+  <text x="147" y="371" fill="#17202D" font-family="Arial, sans-serif" font-size="27" font-weight="800">₹</text>
+  <text x="210" y="348" fill="#91A5BB" font-family="Arial, sans-serif" font-size="16">MONTHLY SPENDING</text>
+  <text x="210" y="383" fill="white" font-family="Arial, sans-serif" font-size="28" font-weight="700">Simple • Clear • Local</text>
+</g>
+
+<g filter="url(#shadow)">
+  <rect x="850" y="80" width="570" height="345" rx="26" fill="#F7FAFC"/>
+  <rect x="850" y="80" width="570" height="58" rx="26" fill="#EAF1F6"/>
+  <circle cx="882" cy="109" r="6" fill="#FF7A7A"/>
+  <circle cx="902" cy="109" r="6" fill="#F4C95D"/>
+  <circle cx="922" cy="109" r="6" fill="#61D095"/>
+  <text x="875" y="177" fill="#182435" font-family="Arial, sans-serif" font-size="17" font-weight="700">Overview</text>
+  <text x="875" y="206" fill="#728197" font-family="Arial, sans-serif" font-size="13">Your money at a glance</text>
+
+  <rect x="875" y="232" width="245" height="72" rx="16" fill="#E9F8F1"/>
+  <text x="895" y="256" fill="#6B7C8E" font-family="Arial, sans-serif" font-size="12">SAVING GOAL</text>
+  <text x="895" y="284" fill="#162334" font-family="Arial, sans-serif" font-size="23" font-weight="700">68%</text>
+  <rect x="990" y="274" width="100" height="7" rx="4" fill="#D2E9DE"/>
+  <rect x="990" y="274" width="68" height="7" rx="4" fill="#49C58C">
+    <animate attributeName="width" values="55;78;55" dur="4s" repeatCount="indefinite"/>
+  </rect>
+
+  <rect x="1140" y="232" width="245" height="72" rx="16" fill="#EAF5FD"/>
+  <text x="1160" y="256" fill="#6B7C8E" font-family="Arial, sans-serif" font-size="12">UPCOMING PAYMENT</text>
+  <text x="1160" y="284" fill="#162334" font-family="Arial, sans-serif" font-size="20" font-weight="700">Next due</text>
+
+  <text x="875" y="340" fill="#68798D" font-family="Arial, sans-serif" font-size="13">Spending activity</text>
+  <path d="M875 385 C940 340 980 400 1035 365 C1090 330 1125 365 1180 342 C1240 317 1285 365 1385 318" stroke="#43B7FF" stroke-width="5" stroke-linecap="round" fill="none">
+    <animate attributeName="stroke-dashoffset" from="420" to="0" dur="2.5s" repeatCount="indefinite"/>
+  </path>
+  <path d="M875 385 C940 340 980 400 1035 365 C1090 330 1125 365 1180 342 C1240 317 1285 365 1385 318" stroke="#43B7FF" stroke-opacity=".12" stroke-width="18" stroke-linecap="round" fill="none"/>
+</g>
+
+<text x="105" y="475" fill="#708399" font-family="Arial, sans-serif" font-size="16">Created by Parth Gadge • © 2026</text>
+</svg>

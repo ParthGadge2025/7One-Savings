@@ -1,0 +1,85 @@
+<svg width="1400" height="820" viewBox="0 0 1400 820" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <linearGradient id="page" x1="0" y1="0" x2="1400" y2="820">
+    <stop stop-color="#08111D"/><stop offset="1" stop-color="#132238"/>
+  </linearGradient>
+  <filter id="s" x="-20%" y="-20%" width="140%" height="140%">
+    <feDropShadow dx="0" dy="18" stdDeviation="20" flood-opacity=".25"/>
+  </filter>
+</defs>
+<rect width="1400" height="820" rx="32" fill="url(#page)"/>
+
+<rect x="55" y="55" width="1290" height="710" rx="28" fill="#F5F8FB" filter="url(#s)"/>
+<rect x="55" y="55" width="250" height="710" rx="28" fill="#101A29"/>
+<rect x="305" y="55" width="1040" height="710" fill="#F5F8FB"/>
+
+<text x="90" y="115" fill="white" font-family="Arial, sans-serif" font-size="28" font-weight="800">7One</text>
+<text x="90" y="143" fill="#61E6A8" font-family="Arial, sans-serif" font-size="14" font-weight="700">SAVINGS</text>
+
+<g font-family="Arial, sans-serif" font-size="15">
+  <text x="90" y="205" fill="#8EA1B6">Overview</text>
+  <text x="90" y="250" fill="#8EA1B6">Expenses</text>
+  <text x="90" y="295" fill="#8EA1B6">Payments</text>
+  <text x="90" y="340" fill="#8EA1B6">Calendar</text>
+  <text x="90" y="385" fill="#8EA1B6">Goals</text>
+  <text x="90" y="430" fill="#8EA1B6">Subscriptions</text>
+  <text x="90" y="475" fill="#8EA1B6">Competition</text>
+  <text x="90" y="520" fill="#8EA1B6">Reports</text>
+  <text x="90" y="565" fill="#8EA1B6">Insights</text>
+  <text x="90" y="610" fill="#8EA1B6">Settings</text>
+</g>
+
+<rect x="82" y="172" width="190" height="49" rx="14" fill="#61E6A8" fill-opacity=".14">
+  <animate attributeName="opacity" values=".55;1;.55" dur="3s" repeatCount="indefinite"/>
+</rect>
+
+<text x="350" y="112" fill="#152337" font-family="Arial, sans-serif" font-size="28" font-weight="800">Good morning 👋</text>
+<text x="350" y="140" fill="#7A899B" font-family="Arial, sans-serif" font-size="14">A simple view of your money</text>
+
+<rect x="350" y="175" width="285" height="135" rx="20" fill="#EAF8F1"/>
+<text x="375" y="210" fill="#738497" font-family="Arial, sans-serif" font-size="12">MONTHLY SPENDING</text>
+<text x="375" y="258" fill="#172538" font-family="Arial, sans-serif" font-size="33" font-weight="800">₹8,420</text>
+<text x="375" y="284" fill="#49A77C" font-family="Arial, sans-serif" font-size="13">Keep tracking every rupee</text>
+
+<rect x="655" y="175" width="285" height="135" rx="20" fill="#EAF4FC"/>
+<text x="680" y="210" fill="#738497" font-family="Arial, sans-serif" font-size="12">BUDGET LEFT</text>
+<text x="680" y="258" fill="#172538" font-family="Arial, sans-serif" font-size="33" font-weight="800">₹4,580</text>
+<text x="680" y="284" fill="#4A8CB5" font-family="Arial, sans-serif" font-size="13">Stay within your plan</text>
+
+<rect x="960" y="175" width="350" height="135" rx="20" fill="#FFF7E7"/>
+<text x="985" y="210" fill="#738497" font-family="Arial, sans-serif" font-size="12">SAVING GOAL</text>
+<text x="985" y="258" fill="#172538" font-family="Arial, sans-serif" font-size="33" font-weight="800">68%</text>
+<rect x="985" y="278" width="285" height="8" rx="4" fill="#E8DDBF"/>
+<rect x="985" y="278" width="194" height="8" rx="4" fill="#F4B942">
+  <animate attributeName="width" values="150;215;150" dur="4s" repeatCount="indefinite"/>
+</rect>
+
+<rect x="350" y="340" width="610" height="340" rx="20" fill="white" stroke="#E7ECF2"/>
+<text x="380" y="380" fill="#172538" font-family="Arial, sans-serif" font-size="18" font-weight="700">Spending activity</text>
+<text x="380" y="405" fill="#8391A2" font-family="Arial, sans-serif" font-size="12">Recent expense pattern</text>
+
+<path d="M385 595 C450 550 485 620 535 565 C585 510 630 580 680 535 C735 485 775 555 820 500 C865 450 900 490 930 450" stroke="#43B7FF" stroke-width="6" fill="none" stroke-linecap="round">
+  <animate attributeName="stroke-dasharray" values="0 800;800 0" dur="3s" repeatCount="indefinite"/>
+</path>
+<line x1="385" y1="620" x2="930" y2="620" stroke="#E9EEF3"/>
+<line x1="385" y1="535" x2="930" y2="535" stroke="#EEF2F6"/>
+<line x1="385" y1="450" x2="930" y2="450" stroke="#EEF2F6"/>
+
+<rect x="985" y="340" width="325" height="160" rx="20" fill="white" stroke="#E7ECF2"/>
+<text x="1015" y="380" fill="#172538" font-family="Arial, sans-serif" font-size="18" font-weight="700">Upcoming</text>
+<text x="1015" y="414" fill="#718095" font-family="Arial, sans-serif" font-size="13">Rent</text>
+<text x="1260" y="414" fill="#172538" font-family="Arial, sans-serif" font-size="13" text-anchor="end">₹5,000</text>
+<text x="1015" y="450" fill="#718095" font-family="Arial, sans-serif" font-size="13">Recharge</text>
+<text x="1260" y="450" fill="#172538" font-family="Arial, sans-serif" font-size="13" text-anchor="end">₹299</text>
+
+<rect x="985" y="520" width="325" height="160" rx="20" fill="#101A29"/>
+<text x="1015" y="560" fill="#61E6A8" font-family="Arial, sans-serif" font-size="12" font-weight="700">SMART TIP</text>
+<text x="1015" y="596" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="700">Small tracking habits</text>
+<text x="1015" y="622" fill="#AAB8C8" font-family="Arial, sans-serif" font-size="13">make saving easier.</text>
+<circle cx="1260" cy="625" r="26" fill="#61E6A8" fill-opacity=".16">
+  <animate attributeName="r" values="22;30;22" dur="2.5s" repeatCount="indefinite"/>
+</circle>
+<text x="1260" y="632" fill="#61E6A8" font-family="Arial, sans-serif" font-size="20" text-anchor="middle">₹</text>
+
+<text x="55" y="800" fill="#73869B" font-family="Arial, sans-serif" font-size="15">7One Savings • Created by Parth Gadge • © 2026</text>
+</svg>
